@@ -13,8 +13,10 @@
   <body>
     <br>
     <%= link_to  "Post", posts_path%>
-    <%= current_user.subscription_status%>
+   
     <% if current_user %>
+     <%= current_user.subscription_status%>
+     <p>Id USer: <%= "#{current_user.stripe_customer_id}" %></p>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% else %>

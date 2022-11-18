@@ -2,13 +2,27 @@
 
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
 <%= link_to "New post", new_post_path %>
+<div id="posts">
+ <table>
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>content</th>
+      <th>premium</th>
+      <th>Stripe Product ID:</th>
+      <th>Stripe Price ID:</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @posts.each do |post| %>
+      <td><%= truncate(post.title, length: 5) %></td>
+      <td><%= truncate(post.content, length: 5) %></td>
+      <td>
+        <%= link_to "Show this post", post %>
+      </td>
+    <% end %>
+  </tbody>
+ </table>
+</div>
