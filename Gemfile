@@ -12,9 +12,8 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
-# Use the Puma web server [https://github.com/puma/puma]
+gem 'devise'
 gem "puma", "~> 5.0"
-
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
